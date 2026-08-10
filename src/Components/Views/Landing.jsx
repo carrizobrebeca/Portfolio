@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { SiGmail } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
+import Service from "../Pages/Service";
+import Services from "../Pages/Services";
+import Works from "../Pages/Works";
 const Landing = () => {
   const navigate = useNavigate();
   const handleEmail = () => {
@@ -20,7 +23,7 @@ const Landing = () => {
 
   return (
     <>
-      <section className="home-section">
+      <section className="home-section  ">
         <div className=" relative h-screen w-full">
           <img
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*KAO1Gm5fqpnKM49Y"
@@ -89,69 +92,102 @@ const Landing = () => {
         </div>
       </section>
 
-<div className=" bg-gray-100">
+      <div className=" bg-[#130024] text-white">
+        <motion.section
+          id="about"
+          className="about py-16 px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scrollAnimation}
+          custom={0.2}
+        >
+          <ul className="about-list mx-auto max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.li
+              className="d-flex justify-center align-middle pt-8"
+              variants={scrollAnimation}
+              custom={0.6}
+            >
+              <img
+                src="https://img.freepik.com/premium-vector/caucasian-female-software-developer-her-40s-debugging-program_1238364-92002.jpg"
+                alt=""
+                className="services "
+              />
+              <div className="grid grid-cols-3 pt-4">
+                <div>
+                  <a
+                    href="https://github.com/carrizobrebeca"
+                    className="flex justify-center pb-6 mb-6"
+                  >
+                    <SiGmail className="" />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/carrizobrebeca"
+                    className="flex justify-center pb-6 mb-6"
+                  >
+                    <AiFillGithub className="" />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/rebeca-carrizo-bourlot-508316274"
+                    className="flex justify-center pb-6 mb-6"
+                  >
+                    <FaLinkedin className="" />
+                  </a>
+                </div>
+              </div>
+            </motion.li>
+            <motion.li
+              className=" p-6 "
+              variants={scrollAnimation}
+              custom={0.4}
+            >
+              <p className="font-bold ">
+                Soy Rebeca Carrizo Bourlot. Soy Full Stack Developer y
+                estudiante de Lic en Informática.
+              </p>
 
-
-      <motion.section
-        id="about"
-        className="  about  text-center py-16 px-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={scrollAnimation}
-        custom={0.2}
-      >
-       
-        <ul className="about-list mx-auto max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600">
-          <motion.li
-            className="services border p-6 "
-            variants={scrollAnimation}
-            custom={0.4}
-          >
-            <p>
-              Soy Full Stack Developer y estudiante de Lic en Informática. Vivo
-              en Argentina. Actualmente trabajo en proyectos independientes y
-              aprovecho el tiempo para aprender nuevas tecnologías.
-            </p>
-          </motion.li>
-
-          <motion.li
-            className="d-flex justify-center align-middle pt-8"
-            variants={scrollAnimation}
-            custom={0.6}
-          >
-            <img
-              src="https://img.freepik.com/premium-vector/caucasian-female-software-developer-her-40s-debugging-program_1238364-92002.jpg"
-              alt=""
-              className="services border "
-            />
-            <div className="flex justify-around mr-6 mt-6">
-               
-              <a
-                href="https://github.com/carrizobrebeca"
-                className="flex justify-center pb-6 mb-6"
-              ></a> <SiGmail />
-              {/* <button onClick={handleEmail}>
-          </button> */}
-
-
-              <a
-                href="https://github.com/carrizobrebeca"
-                className="flex justify-center pb-6 mb-6"
-              >
+              <p className="text-white/50 pt-2">
+                Vivo en Argentina. Actualmente trabajo en proyectos
+                independientes y aprovecho el tiempo para aprender nuevas
+                tecnologías.
+              </p>
+            </motion.li>
+          </ul>
+        </motion.section>
+<div className="border-2 border-white/50 mr-10 ml-10"></div>
+        <motion.section
+          id="sevices"
+          className="sevices py-16 px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scrollAnimation}
+          custom={0.2}
+        >
+          <div className="font-bold ml-10 text-xl">Services</div>
+          <div className="mx-auto max-w-2xl"><Services /></div>
+          
+          </motion.section>
+<div className="border-2 border-white/50 mr-10 ml-10"></div>
+<motion.section
+          id="work"
+          className="work py-16 px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scrollAnimation}
+          custom={0.2}
+        >
+          <ul className=" mx-auto max-w-2xl ">
+           
+          <Works />
             
-                  <AiFillGithub />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/rebeca-carrizo-bourlot-508316274"
-                className="flex justify-center pb-6 mb-6 text-black"
-              >
-                <FaLinkedin /></a>
-            </div>
-          </motion.li>
-        </ul>
-      </motion.section>
+          </ul>
+        </motion.section>
       </div>
     </>
   );
