@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from './Components/Views/Landing';
 import Home from './Components/Pages/Home';
+import ReviewForm from './Components/Pages/ReviewForm';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         
-        <Route path="/home" element={<Home />} />
+        <Route path="/reviewform" element={<ReviewForm />} />
        
       </Routes>
     </Router>
