@@ -9,7 +9,7 @@ const Services = () => {
 ];
   return (
     <>
-    <div className='inline-block'>
+    <div className='inline-block  w-full'>
           {services.map(
         ({ id, name, description, point1, point2, point3, image }) => {
           return (

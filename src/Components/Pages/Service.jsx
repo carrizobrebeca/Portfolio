@@ -17,7 +17,7 @@ const Service = ({ id, name, description, point1, point2, point3, image }) => {
 
   return (
     <>
-      <ul className=" about-list mx-auto max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+      <ul className=" grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
         <motion.li className=" p-6 " variants={scrollAnimation} custom={0.4}>
           <p className="font-bold text-xl">{name}</p>
 
@@ -42,16 +42,12 @@ const Service = ({ id, name, description, point1, point2, point3, image }) => {
        
         </motion.li>
         <motion.li
-          className="d-flex justify-center align-middle pt-8"
+          className="d-flex justify-center items-center pt-8"
           variants={scrollAnimation}
           custom={0.6}
         >
           
-            <img
-            src={image}
-            alt=""
-            className="services "
-          />
+           <div className="w-full h-[200px] "> <img src={image} alt="" className="h-full w-full object-cover " /></div>
         </motion.li>
       </ul>
     </>

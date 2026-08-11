@@ -3,10 +3,14 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { SiGmail } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
+import { PiInstagramLogoFill } from "react-icons/pi";
+import { TbBrandGithubFilled } from "react-icons/tb";
+
 import Service from "../Pages/Service";
 import Services from "../Pages/Services";
 import Works from "../Pages/Works";
+import Reviews from "../Pages/Reviews";
 const Landing = () => {
   const navigate = useNavigate();
   const handleEmail = () => {
@@ -23,7 +27,7 @@ const Landing = () => {
 
   return (
     <>
-      <section className="home-section  ">
+      <section className="home-section bg-[#08021F]">
         <div className=" relative h-screen w-full">
           <img
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*KAO1Gm5fqpnKM49Y"
@@ -31,21 +35,23 @@ const Landing = () => {
             className="absolute inset-0 h-full w-full object-cover"
           />
 
-          <div className="relative z-10 flex h-full items-center justify-center bg-black bg-opacity-40 backdrop-blur-sm">
-            <div className="absolute  top-4 w-full text-base sm:text-xl  text-white ">
-              <div className="grid grid-cols-3 w-full ">
-                <div className="flex justify-center pt-2">
+          <div className="relative z-10 flex h-full w-full items-center justify-center bg-[#08021F] bg-opacity-40 backdrop-blur-sm">
+            <div className="absolute top-4 text-sm lg:text-xl text-white w-full px-2">
+              <div className="flex w-full items-center justify-between ">
+
+                {/* NOMBRE */}
+                <div className="flex items-center justify-start  min-w-0 flex-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-6 pb-2"
+                    className="size-5 lg:size-6 shrink-0 pb-2"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M15.75 19.5 8.25 12l7.5-7.5"
                     />
                   </svg>
@@ -54,45 +60,66 @@ const Landing = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-6 pt-2"
+                    className="size-5 lg:size-6 shrink-0 pt-2"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="m8.25 4.5 7.5 7.5-7.5 7.5"
                     />
                   </svg>
-                  <h2 className=" text-sm">Rebeca Carrizo Bourlot</h2>
+
+                  <h2 className="whitespace-nowrap text-xs sm:text-sm lg:text-xl">
+                    Rebeca Carrizo
+                  </h2>
                 </div>
 
-                <div className="flex justify-center">
-                  <div className="flex justify-around">
-                    <h2 className="ml-2 mr-2">About</h2>
-                    <h2 className="ml-2 mr-2">Porfolio</h2>
-                    <h2 className="ml-2 mr-2">Services</h2>
-                    <h2 className="ml-2 mr-2">Testimonials</h2>
-                  </div>
+                
+                
+
+                {/* CONTACT */}
+                <div className="flex justify-end flex-1 pr-2">
+                  <button className="border p-1 sm:p-2 text-xs sm:text-sm lg:text-xl whitespace-nowrap">
+                    Contact me
+                  </button>
                 </div>
 
-                <div className="flex justify-center">
-                  <button className="border  text-sm p-2">Contact me</button>
-                </div>
               </div>
             </div>
+<div className="absolute top-10"><div className="flex justify-around min-w-0 flex-[2] pt-2">
+                  <div className="flex items-center justify-center gap-4  text-white">
 
+                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
+                      About
+                    </h2>
+
+                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
+                      Porfolio
+                    </h2>
+
+                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
+                      Services
+                    </h2>
+
+                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
+                      Testimonials
+                    </h2>
+
+                  </div>
+                </div></div>
             <div className="grid grid-rows-3 gap-4 text-white">
               <h2 className="flex justify-center">Freelance web developer</h2>
               <h2 className="flex justify-center">based in Argentina</h2>
 
-              <button className="border text-sm p-2">Check my work</button>
+              <button className="border  p-2">Check my work</button>
             </div>
           </div>
         </div>
       </section>
 
-      <div className=" bg-[#130024] text-white">
+      <div className=" bg-[#08021F] text-white">
         <motion.section
           id="about"
           className="about py-16 px-4"
@@ -146,7 +173,7 @@ const Landing = () => {
               custom={0.4}
             >
               <p className="font-bold ">
-                Soy Rebeca Carrizo Bourlot. Soy Full Stack Developer y
+                Soy Rebeca Carrizo. Soy Full Stack Developer y
                 estudiante de Lic en Informática.
               </p>
 
@@ -158,7 +185,7 @@ const Landing = () => {
             </motion.li>
           </ul>
         </motion.section>
-<div className="border-2 border-white/50 mr-10 ml-10"></div>
+        <div className="border-2 border-white/50 mr-10 ml-10"></div>
         <motion.section
           id="sevices"
           className="sevices py-16 px-4"
@@ -168,12 +195,12 @@ const Landing = () => {
           variants={scrollAnimation}
           custom={0.2}
         >
-          <div className="font-bold ml-10 text-xl">Services</div>
+          <div className="font-bold ml-4 lg:ml-10 text-xl ">Services</div>
           <div className="mx-auto max-w-2xl"><Services /></div>
-          
-          </motion.section>
-<div className="border-2 border-white/50 mr-10 ml-10"></div>
-<motion.section
+
+        </motion.section>
+        <div className="border-2 border-white/50 mr-10 ml-10"></div>
+        <motion.section
           id="work"
           className="work py-16 px-4"
           initial="hidden"
@@ -182,12 +209,133 @@ const Landing = () => {
           variants={scrollAnimation}
           custom={0.2}
         >
+          <div className="font-bold ml:4 lg:ml-10 text-xl pb-6">Work</div>
           <ul className=" mx-auto max-w-2xl ">
-           
-          <Works />
-            
+
+            <Works />
+
           </ul>
         </motion.section>
+        <div className="border-2 border-white/50 mr-10 ml-10"></div>
+        <motion.section
+          id="review"
+          className="review py-16 px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scrollAnimation}
+          custom={0.2}
+        >
+          <div className="font-bold ml:4 lg:ml-10 text-xl pb-6">Reviews</div>
+          <div className="mx-auto max-w-2xl">
+
+            <Reviews />
+
+          </div>
+        </motion.section>
+        <div className="border-2 border-white/50 mr-10 ml-10"></div>
+        <motion.section
+          className="contact mx-auto max-w-2xl text-center py-16 pb-2 pt-2 px-2 sm:px-0"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scrollAnimation}
+          custom={3.6}
+        >
+          <div className="d-flex justify-content-center align-items-center bg-[#0A0342] ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-4 sm:gap-8">
+
+              {/* COLUMNA IZQUIERDA */}
+              <div className="flex justify-start p-4">
+                <div className="grid grid-rows-6 w-full">
+
+                  <h2 className="flex justify-start text-left">
+                    Vamos a hablar sobre
+                  </h2>
+
+                  <h2 className="flex justify-start text-left flex-wrap">
+                    una
+                    <span className="text-[#513DFF] font-bold pr-2 pl-2">
+                      idea
+                    </span>
+                    <span>juntos</span>
+                  </h2>
+
+                  <h2 className="flex justify-start pt-4 text-left">
+                    Estoy interesado en ...
+                  </h2>
+
+                  <div className="flex justify-start items-center pt-4 w-full gap-2 flex-wrap">
+                    <div className="bg-white/50  rounded-lg text-[#0A0342] p-2 text-sm sm:text-base">
+                      E-commerce Website
+                    </div>
+
+                    <div className="bg-white/50  rounded-lg text-[#0A0342]  p-2 text-sm sm:text-base">
+                      Landing page
+                    </div>
+                  </div>
+
+                  <div className="flex justify-start items-center gap-2 flex-wrap pt-2">
+                    <div className="bg-white/50  rounded-lg text-[#0A0342]  p-2 text-sm sm:text-base">
+                      Portfolio
+                    </div>
+
+                    <div className="bg-white/50  rounded-lg text-[#0A0342]  p-2 text-sm sm:text-base">
+                      Blog Website
+                    </div>
+
+                    <div className="bg-white/50  rounded-lg text-[#0A0342]  p-2 text-sm sm:text-base">
+                      Institucional
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* COLUMNA DERECHA */}
+              <div className="flex justify-center p-4 ">
+                <div className="grid grid-rows-5 gap-2 w-full">
+
+                  <input type="text" className="rounded-lg w-full p-2" />
+
+                  <input type="text" className="rounded-lg w-full p-2" />
+
+                  <input type="text" className="rounded-lg w-full p-2" />
+
+                  <button className="bg-white/50  rounded-lg text-[#0A0342]  ml-4 mr-4 sm:ml-8 sm:mr-8 mt-2 mb-2 h-10">
+                    Enviar
+                  </button>
+
+                  <div className="flex justify-around   ">
+
+                    <div className="border border-white/50  rounded-full text-white/50   size-10 flex justify-center items-center">
+                      <a href="https://github.com/carrizobrebeca">
+                        <PiInstagramLogoFill className="size-5 max-sm:size-4" />
+                      </a>
+                    </div>
+
+                    <div className="border border-white/50  rounded-full text-white/50   size-10  flex justify-center items-center">
+                      <a href="https://github.com/carrizobrebeca">
+                        <TbBrandGithubFilled className="size-5 max-sm:size-4" />
+                      </a>
+                    </div>
+
+                    <div className="border border-white/50  rounded-full text-white/50  size-10 flex justify-center items-center">
+                      <a href="https://www.linkedin.com/in/rebeca-carrizo-bourlot-508316274">
+                        <FaLinkedinIn className="size-5 max-sm:size-4" />
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </motion.section>
+        <div className="flex justify-center"><footer className=" pb-2 text-white/50">© Prometheus Studio</footer></div>
+
       </div>
     </>
   );

@@ -12,9 +12,9 @@ const Work = ({ id, name, category, image, work }) => {
 
   return (
     <>
-      <ul className="mx-auto max-w-2xl/50  text-white border border-white/50">
+      <ul className="  text-white border border-white/50">
         <div className="" variants={scrollAnimation} custom={0.4}>
-         <div className="max-w-[270 px] max-h-[210 px]"> <img src={image} alt="" className="services " /></div>
+         <div className="w-full h-[200px] "> <img src={image} alt="" className="h-full w-full object-cover " /></div>
          
           
 
