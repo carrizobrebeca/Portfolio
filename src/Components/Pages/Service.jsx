@@ -5,7 +5,7 @@ import { SiGmail } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { FiPlay } from "react-icons/fi";
-const Service = ({ id, name, description, point1, point2, point3, image }) => {
+const Service = ({ id, name, description, point1, point2, point3,  point4, image }) => {
   const scrollAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: (delay = 0) => ({
@@ -37,6 +37,10 @@ const Service = ({ id, name, description, point1, point2, point3, image }) => {
              <div className="flex justify-start items-center">
             <FiPlay className="" />
             <p className="text-white/50 pl-2 ">{point3}</p>
+          </div>
+          <div className="flex justify-start items-center">
+            <FiPlay className="" />
+            <p className="text-white/50 pl-2 ">{point4}</p>
           </div>
           </div>
        

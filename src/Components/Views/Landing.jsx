@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { SiGmail } from "react-icons/si";
@@ -11,11 +12,33 @@ import Service from "../Pages/Service";
 import Services from "../Pages/Services";
 import Works from "../Pages/Works";
 import Reviews from "../Pages/Reviews";
+
 const Landing = () => {
   const navigate = useNavigate();
-  const handleEmail = () => {
-    window.location.href = "mailto:carrizob.rebeca@gmail.com";
+ 
+const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_843uirh',    
+        'template_1vvooik',    
+        'kPa60sIBAK0F48k3o'      
+      )
+      .then(
+        () => {
+          alert('¡Correo enviado con éxito!');
+          form.current.reset(); // Limpia el formulario
+        },
+        (error) => {
+          alert('Ocurrió un error al enviar el correo...');
+          console.log('FAILED...', error.text);
+        }
+      );
   };
+
   const scrollAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: (delay = 0) => ({
@@ -24,11 +47,18 @@ const Landing = () => {
       transition: { delay, duration: 0.5 },
     }),
   };
-
+  const handleScroll = (id) => {
+    console.log(`Scrolling to section: ${id}`);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <section className="home-section bg-[#08021F]">
-        <div className=" relative h-screen w-full">
+
+      <section className=" home-section bg-[#08021F]">
+        <div id="home" className=" relative h-screen w-full">
           <img
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*KAO1Gm5fqpnKM49Y"
             alt=""
@@ -76,44 +106,82 @@ const Landing = () => {
                   </h2>
                 </div>
 
-                
-                
+
+
 
                 {/* CONTACT */}
                 <div className="flex justify-end flex-1 pr-2">
-                  <button className="border p-1 sm:p-2 text-xs sm:text-sm lg:text-xl whitespace-nowrap">
-                    Contact me
-                  </button>
+                  <a
+                    href="#home"
+                    onClick={() => handleScroll("contact")}
+                    className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+                  ><button className="border hover:border-white/50 p-1 sm:p-2 text-xs sm:text-sm lg:text-xl whitespace-nowrap">
+                      Contact me
+                    </button></a>
+
                 </div>
 
               </div>
             </div>
-<div className="absolute top-10"><div className="flex justify-around min-w-0 flex-[2] pt-2">
-                  <div className="flex items-center justify-center gap-4  text-white">
+            <div className="absolute top-10"><div className="flex justify-around min-w-0 flex-[2] pt-2">
+              <div className="flex items-center justify-center gap-4  text-white">
+                <a
+                  href="#home"
+                  onClick={() => handleScroll("about")}
+                  className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+                >
+                  <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap hover:text-white/50">
+                    About
+                  </h2>
+                </a>
 
-                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
-                      About
-                    </h2>
+                <a
+                  href="#home"
+                  onClick={() => handleScroll("services")}
+                  className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+                >
+                  <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap hover:text-white/50">
+                    Services
+                  </h2>
+                </a>
+                <a
+                  href="#home"
+                  onClick={() => handleScroll("portfolio")}
+                  className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+                >
+                  <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap hover:text-white/50">
+                    Porfolio
+                  </h2>
+                </a>
 
-                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
-                      Porfolio
-                    </h2>
 
-                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
-                      Services
-                    </h2>
 
-                    <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap">
-                      Testimonials
-                    </h2>
+                <a
+                  href="#home"
+                  onClick={() => handleScroll("reviews")}
+                  className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+                >
+                  <h2 className="lg:ml-2 lg:mr-2 whitespace-nowrap hover:text-white/50">
+                    Testimonials
+                  </h2>
+                </a>
 
-                  </div>
-                </div></div>
+
+              </div>
+            </div></div>
             <div className="grid grid-rows-3 gap-4 text-white">
               <h2 className="flex justify-center">Freelance web developer</h2>
               <h2 className="flex justify-center">based in Argentina</h2>
 
-              <button className="border  p-2">Check my work</button>
+<div className="flex justify-center"><a
+                href="#home"
+                onClick={() => handleScroll("portfolio")}
+                className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+              >
+                <button className="border hover:border-white/50 hover:text-white/50 p-2">Check my work</button>
+              </a></div>
+
+              
             </div>
           </div>
         </div>
@@ -138,7 +206,7 @@ const Landing = () => {
               <img
                 src="https://img.freepik.com/premium-vector/caucasian-female-software-developer-her-40s-debugging-program_1238364-92002.jpg"
                 alt=""
-                className="services "
+
               />
               <div className="grid grid-cols-3 pt-4">
                 <div>
@@ -187,7 +255,7 @@ const Landing = () => {
         </motion.section>
         <div className="border-2 border-white/50 mr-10 ml-10"></div>
         <motion.section
-          id="sevices"
+          id="services"
           className="sevices py-16 px-4"
           initial="hidden"
           whileInView="visible"
@@ -201,7 +269,7 @@ const Landing = () => {
         </motion.section>
         <div className="border-2 border-white/50 mr-10 ml-10"></div>
         <motion.section
-          id="work"
+          id="portfolio"
           className="work py-16 px-4"
           initial="hidden"
           whileInView="visible"
@@ -218,7 +286,7 @@ const Landing = () => {
         </motion.section>
         <div className="border-2 border-white/50 mr-10 ml-10"></div>
         <motion.section
-          id="review"
+          id="reviews"
           className="review py-16 px-4"
           initial="hidden"
           whileInView="visible"
@@ -235,6 +303,7 @@ const Landing = () => {
         </motion.section>
         <div className="border-2 border-white/50 mr-10 ml-10"></div>
         <motion.section
+          id="contact"
           className="contact mx-auto max-w-2xl text-center py-16 pb-2 pt-2 px-2 sm:px-0"
           initial="hidden"
           whileInView="visible"
@@ -255,7 +324,7 @@ const Landing = () => {
 
                   <h2 className="flex justify-start text-left flex-wrap">
                     una
-                    <span className="text-[#513DFF] font-bold pr-2 pl-2">
+                    <span className="font-extrabold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent pr-2 pl-2">
                       idea
                     </span>
                     <span>juntos</span>
@@ -293,16 +362,16 @@ const Landing = () => {
               </div>
 
               {/* COLUMNA DERECHA */}
-              <div className="flex justify-center p-4 ">
+              <form  ref={form} onSubmit={sendEmail} className="flex justify-center p-4 text-[#0A0342]">
                 <div className="grid grid-rows-5 gap-2 w-full">
 
-                  <input type="text" className="rounded-lg w-full p-2" />
+                  <input type="email" name="user_email" placeholder="E-mail" className="rounded-lg w-full p-2" />
 
-                  <input type="text" className="rounded-lg w-full p-2" />
+                  <input type="text" name="name" placeholder="Nombre y Apellido" className="rounded-lg w-full p-2" />
 
-                  <input type="text" className="rounded-lg w-full p-2" />
+                  <textarea name="message" required placeholder="Mensaje" className="rounded-lg w-full p-2" />
 
-                  <button className="bg-white/50  rounded-lg text-[#0A0342]  ml-4 mr-4 sm:ml-8 sm:mr-8 mt-2 mb-2 h-10">
+                  <button type="submit" className="bg-white/50  rounded-lg   ml-4 mr-4 sm:ml-8 sm:mr-8 mt-2 mb-2 h-10">
                     Enviar
                   </button>
 
@@ -329,14 +398,32 @@ const Landing = () => {
                   </div>
 
                 </div>
-              </div>
+              </form>
 
             </div>
           </div>
         </motion.section>
         <div className="flex justify-center"><footer className=" pb-2 text-white/50">© Prometheus Studio</footer></div>
+        <div
+          className="fixed bottom-0 left-4 w-full h-auto p-4 bg-transparent flex justify-end items-end"
+          style={{
+            left: 0,
+            textAlign: "right",
+            zIndex: 9999,
+          }}
+        >
 
+          <a
+            href="#home"
+            onClick={() => handleScroll("home")}
+            className="flex items-center space-x-2 hover:text-white/50 cursor-pointer"
+          >  <button className="bg-white/50 text-[#0A0342] text-xl rounded-full w-10 h-10">^</button></a>
+
+
+        </div>
       </div>
+
+
     </>
   );
 };

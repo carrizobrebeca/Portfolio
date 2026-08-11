@@ -3,9 +3,9 @@ import Work from "./Work";
 
 const Works = () => {
         const works = [
-  { id: 1, name: "Deja Vu Market", category: "E-COMMERCE", image: "https://www.randstad.ch/s3fs-media/l-ch/public/bynder/F80CCC32-069F-47B7-94C894A10CCAE423.webp", work:"FULL-STACK" },
-  { id: 2, name: "El Rocío", category: "BOOKAPP",  image: "https://iddigitalschool.com/bootcamps/wp-content/uploads/2021/06/que-es-full-stack.png", work:"FULL-STACK" },
-  { id: 3, name: "Magic", category: "APP WEB",image: "https://website-dev.hn.ss.bfcplatform.vn/o_Z15_YPB_2r4_Fuch_Yi6ivd9_Ew1ol_TGKA_Fv_Rk_Wn_C_Ctf17_V1gp_KU_4edf46e8d0.jpg", work:"FULL-STACK" }
+  { id: 1, name: "Deja Vu Market", category: "E-COMMERCE", image: "https://res.cloudinary.com/x968hkr9/image/upload/v1786455384/wsqzz8uhv7wcjjth50pz.jpg", work:"FULL-STACK" },
+  { id: 2, name: "El Rocío", category: "BOOKAPP",  image: "https://res.cloudinary.com/x968hkr9/image/upload/v1786454879/wrivfkmql4wyot41giql.jpg", work:"FULL-STACK" },
+  { id: 3, name: "Magic", category: "APP WEB",image: "https://res-console.cloudinary.com/x968hkr9/thumbnails/v1/image/upload/v1786455739/aHRrdmxhbGl0OW1vNjZ5Y3V5bzE=/preview", work:"FULL-STACK" }
 ];
   return (
     <>

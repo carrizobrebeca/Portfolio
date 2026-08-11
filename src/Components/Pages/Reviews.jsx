@@ -4,9 +4,9 @@ import Review from "./Review";
 
 const Reviews = () => {
         const reviews = [
-  { id: 1, userName: "Roque Perez", points: "5",  review:"fnsdsdfjdsfjsjfbnsdjcsdcm sd dsfjd jsdjskfesf  jsdfcjskrfnsejrb sdfckdsjsrfsernj " },
-  { id: 2, userName: "Hilda Bourlot", points: "5",    review:"tretgergergb rtytrhtb tgrgsdgv rgdftgrth" },
-  { id: 3, userName: "Claudio Nuñez", points: "5", review:"FULL-STACK" }
+  { id: 1, userName: "Mirta", points: "5",  review:"Una aplicación excelente, muy fácil de usar. Desde el primer momento pude entender cómo funcionaba. Todo está muy bien organizado. " }, 
+  { id: 2, userName: "Hilda", points: "5",    review:"Me sorprendió lo simple y práctica que es la aplicación. Tiene un diseño moderno, las funciones están muy bien pensadas y todo funciona de manera rápida. Realmente me facilita mucho las cosas." },
+  { id: 3, userName: "Erwin", points: "5", review:"Una muy buena experiencia. La aplicación tiene una interfaz limpia, moderna y fácil de usar. Me gustó especialmente que todas las opciones estén organizadas de forma clara y que sea tan sencilla de utilizar." }
 ];
   return (
     <>
