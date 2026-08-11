@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import startReducer from './startSlice';
-// import endReducer from './endSlice';
+import reviewsReducer from './reviewSlice';
 
 const store = configureStore({
   reducer: {
     // start: startReducer,
     // end: endReducer,
-    
+    reviews: reviewsReducer,
   },
 });
 
 export default store;
+
+
+    
