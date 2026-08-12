@@ -378,7 +378,7 @@ const form = useRef();
                   <div className="flex justify-around   ">
 
                     <div className="border border-white/50  rounded-full text-white/50   size-10 flex justify-center items-center">
-                      <a href="https://github.com/carrizobrebeca">
+                      <a href="https://www.instagram.com/prometheus.studio/">
                         <PiInstagramLogoFill className="size-5 max-sm:size-4" />
                       </a>
                     </div>

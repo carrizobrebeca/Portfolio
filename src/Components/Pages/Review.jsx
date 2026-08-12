@@ -18,7 +18,7 @@ const Review = ({ id, userName, points,  review }) => {
   <FaStar key={index} />
 ))}</div>  
          <p className="text-white/50 p-2 pt-6 h-[170px]">{review}</p>
-        <div className="flex justify-start font-bold text-xl p-2"><div className="rounded-full bg-white/50 w-10 h-10 flex justify-center items-center ">N</div ><div className="pl-2">{userName}</div></div>
+        <div className="flex justify-start items-center font-bold text-xl p-2"><div className="rounded-full bg-white/50 w-10 h-10 flex justify-center items-center ">{userName?.charAt(0).toUpperCase()}</div ><div className="pl-2">{userName}</div></div>
 
       
        
